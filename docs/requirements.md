@@ -7,4 +7,6 @@ What the Users can do ?
     Bookmark it 
     Login and Logout
     See the Profile
+    Filter Movies
+    
 
