@@ -1,4 +1,5 @@
 import { getPopularMovies } from "../../lib/api/movies";
+import MovieCard from "../../components/movie/MovieCard";
 
 export default async function Home() {
   const movies = await getPopularMovies();
@@ -7,13 +8,11 @@ export default async function Home() {
     <main>
       <h1>Popular Movies</h1>
 
-      <ol className="list-decimal pl-6">
+      <div>
         {movies.map((movie) => (
-          <li key={movie.id}>
-            {movie.title}
-          </li>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
-      </ol>
+      </div>
     </main>
   );
 }
