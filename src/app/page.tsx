@@ -1,5 +1,5 @@
 import { getPopularMovies } from "../../lib/api/movies";
-import MovieCard from "../../components/movie/MovieCard";
+import MovieGrid from "../../components/movie/MovieGrid";
 
 export default async function Home() {
   const movies = await getPopularMovies();
@@ -7,12 +7,7 @@ export default async function Home() {
   return (
     <main>
       <h1>Popular Movies</h1>
-
-      <div>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
+      <MovieGrid movies={movies} />
     </main>
   );
 }
