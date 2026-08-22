@@ -26,7 +26,7 @@
     but this issue is only on some page the others are rendering fine.
 
     this issue is next image optimization which is not loading images fast 
-    
+    bypassed this my using unoptimized in the next app     
 
     
 
