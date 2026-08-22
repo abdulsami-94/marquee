@@ -18,14 +18,16 @@ export async function  getPopularMovies(): Promise<Movie[]> {
 }
 
 export async function getMovieById(id: string){
-    const res = await fetch(
-        `${BASE_URL}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`,
-        { next: { revalidate: 3600} }
-    );
-
-    if (!res.ok) {
-        throw new Error(`TMDB request failed: ${res.status}`);
+    const url = `${BASE_URL}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`;
+    try {
+        const res = await fetch(url, { next: { revalidate: 3600 } });
+        if (!res.ok) {
+            throw new Error(`TMDB request failed: ${res.status} for id ${id}`);
+        }
+        return res.json();
+    } catch (err) {
+        console.error(`getMovieById failed for id ${id}:`, err);
+        throw err;
     }
-
-    return res.json();
+    
 }

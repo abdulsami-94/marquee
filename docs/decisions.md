@@ -20,6 +20,13 @@
     while doing this i didn't knew how to render the movie 
     had some issue is placement of lib folder it was in root and so moved it to into the src
     there is an issue related to movies details page TMDB throwing 404
+    i had forgot to add base url for image so it wasn't rendering images
+
+    Fetching Failed issue getting error response before the request reaches the server
+    but this issue is only on some page the others are rendering fine.
+
+    this issue is next image optimization which is not loading images fast 
+    
 
     
 

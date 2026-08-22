@@ -17,6 +17,7 @@ export default async function MoviePage({ params }: { params: Promise<{id:string
                 alt={movie.title}
                 width={300}
                 height={400}
+                unoptimized
             />
             <h1 className="text-2xl font-bold mt-4">{movie.title}</h1>
             <p className="text-sm text-muted-foreground">{movie.release_date}</p>
