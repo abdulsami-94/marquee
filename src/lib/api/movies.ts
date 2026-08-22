@@ -1,5 +1,5 @@
 import { BBH_Bartle } from "next/font/google";
-import type { Movie } from "../../types/movie";
+import type { Movie } from "../../../types/movie";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 

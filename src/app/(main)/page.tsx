@@ -1,4 +1,4 @@
-import { getPopularMovies } from "../../../lib/api/movies";
+import { getPopularMovies } from "@/lib/api/movies";
 import MovieGrid from "../../../components/movie/MovieGrid";
 
 export default async function Home() {

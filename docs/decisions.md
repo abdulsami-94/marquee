@@ -14,4 +14,13 @@
 4. Making the Single Movie Details Page
     Having problem's in using Link to link movies page
     Closed Link closing tag to early
+
+5. Need to add a notfound.tsx if the server gives 404
+    and a loading page to give the sence of loading when clicked the single movies poster
+    while doing this i didn't knew how to render the movie 
+    had some issue is placement of lib folder it was in root and so moved it to into the src
+    there is an issue related to movies details page TMDB throwing 404
+
     
+
+
