@@ -16,3 +16,16 @@ export async function  getPopularMovies(): Promise<Movie[]> {
     const data = await res.json();
     return data.results;
 }
+
+export async function getMovieById(id: string){
+    const res = await fetch(
+        `${BASE_URL}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`,
+        { next: { revalidate: 3600} }
+    );
+
+    if (!res.ok) {
+        throw new Error(`TMDB request failed: ${res.status}`);
+    }
+
+    return res.json();
+}
