@@ -1,23 +1,29 @@
-import { getPosterUrl } from "@/lib/utils";
 import type { Movie } from "../../types/movie";
-import Image from "next/image";
-import MoviePoster from "./moviePoster";
+import Link from "next/link";
+import { getPosterUrl } from "@/lib/utils";
+import MoviePoster from "./MoviePoster";
 
 type MovieCardProps = {
-    movie: Movie;
+  movie: Movie;
 };
 
 export default function MovieCard({ movie }: MovieCardProps) {
-    const posterUrl = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "/placeholder-poster.jpg";
+  return (
+    <Link href={`/movies/${movie.id}`} className="group block">
+      <MoviePoster
+        src={getPosterUrl(movie.poster_path)}
+        alt={movie.title}
+      />
 
-    return (
-        <article>
-            <MoviePoster src={getPosterUrl(movie.poster_path)} alt={movie.title} />
+      <div className="mt-2">
+        <h2 className="truncate font-medium group-hover:text-gray-300">
+          {movie.title}
+        </h2>
 
-            <h2>{movie.title}</h2>
-            <p>⭐️ {movie.vote_average.toFixed(1)}</p>
-        </article>
-    );
+        <p className="text-sm text-gray-400">
+          ⭐ {movie.vote_average.toFixed(1)}
+        </p>
+      </div>
+    </Link>
+  );
 }
