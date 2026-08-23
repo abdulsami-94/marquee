@@ -1,4 +1,7 @@
+import { getPosterUrl } from "@/lib/utils";
 import type { Movie } from "../../types/movie";
+import Image from "next/image";
+import MoviePoster from "./moviePoster";
 
 type MovieCardProps = {
     movie: Movie;
@@ -11,10 +14,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
 
     return (
         <article>
-            <img
-                src={posterUrl}
-                alt={movie.title}
-            />
+            <MoviePoster src={getPosterUrl(movie.poster_path)} alt={movie.title} />
 
             <h2>{movie.title}</h2>
             <p>⭐️ {movie.vote_average.toFixed(1)}</p>

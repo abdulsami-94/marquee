@@ -28,6 +28,8 @@
     this issue is next image optimization which is not loading images fast 
     bypassed this my using unoptimized in the next app     
 
+6. Thinking about ading a loading skeleton in the main page when the data(images) is loading 
+    tracking that will need useState and to do that i need to use client side 
     
 
 
