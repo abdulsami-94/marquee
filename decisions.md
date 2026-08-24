@@ -34,6 +34,7 @@
 7. Adding the Serch bar 2 options local state search vs URL driven 
     going with the URL one becz its sharable 
     got 2 search folder one in main and other in the app
+    moved the search in to main and deleted the app/search
     
     
 

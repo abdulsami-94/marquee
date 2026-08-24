@@ -8,14 +8,6 @@ export default function Navbar() {
 
             <Link href="/" className="text-xl font-bold">Marquee</Link>
 
-            <div className="flex-1 px-8">
-                <form className="mx-auto max-w-lg">
-                    <input
-                        type="search"
-                        placeholder="Search Movies..."
-                        className="w-full rounded-lg border px-4 py-2 outline-none focus:ring-2" />
-                </form>
-            </div>
             <div>
                 <SearchBar />
             </div>
