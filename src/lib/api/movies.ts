@@ -1,4 +1,3 @@
-import { BBH_Bartle } from "next/font/google";
 import type { Movie } from "../../../types/movie";
 
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -34,12 +33,9 @@ export async function getMovieById(id: string){
 export async function searchMovies(query: string): Promise<Movie[]> {
     if (!query.trim()) return [];
 
-    const res = await fetch(
-        `${BASE_URL}/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`,
-        {
-            headers: { Authorization: `Bearer ${process.env.TMDB_API_KEY}`},
-            next: { revalidate: 60 },
-        }
+    const res= await fetch(
+        `${BASE_URL}/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`,
+        { next: { revalidate: 60  }}
     );
 
     if (!res.ok) throw new Error(`Search failed: ${res.status}`);

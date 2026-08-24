@@ -38,5 +38,12 @@
 
     
 8. Need to keep the navbar permanent in all the page 
+    moved the nav components into the layout.tsx file 
+
     and fix the search bar its not giving result's 
+    its giving 401 issue related to API key
+    dropping the header pattern and using the same API call methods the other 2 functions
+
+    
+
 
