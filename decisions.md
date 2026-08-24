@@ -44,6 +44,3 @@
     its giving 401 issue related to API key
     dropping the header pattern and using the same API call methods the other 2 functions
 
-    
-
-
