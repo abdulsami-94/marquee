@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "../../components/navigation/Navbar";
 
 export const metadata: Metadata = {
   title: "MovieApp",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Navbar />
       <body>{children}</body>
     </html>
   );

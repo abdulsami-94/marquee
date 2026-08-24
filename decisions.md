@@ -35,7 +35,8 @@
     going with the URL one becz its sharable 
     got 2 search folder one in main and other in the app
     moved the search in to main and deleted the app/search
-    
-    
 
+    
+8. Need to keep the navbar permanent in all the page 
+    and fix the search bar its not giving result's 
 
