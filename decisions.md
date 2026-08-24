@@ -30,6 +30,9 @@
 
 6. Thinking about ading a loading skeleton in the main page when the data(images) is loading 
     tracking that will need useState and to do that i need to use client side 
+
+7. Adding the Serch bar 2 options local state search vs URL driven 
+    going with the URL one becz its sharable 
     
 
 

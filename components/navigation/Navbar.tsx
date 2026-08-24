@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SearchBar from "../movie/SearchBar";
 
 export default function Navbar() {
     return (
@@ -14,6 +15,9 @@ export default function Navbar() {
                         placeholder="Search Movies..."
                         className="w-full rounded-lg border px-4 py-2 outline-none focus:ring-2" />
                 </form>
+            </div>
+            <div>
+                <SearchBar />
             </div>
 
             <div className="flex items-center gap-4">

@@ -29,5 +29,21 @@ export async function getMovieById(id: string){
         console.error(`getMovieById failed for id ${id}:`, err);
         throw err;
     }
-    
+}
+
+export async function searchMovies(query: string): Promise<Movie[]> {
+    if (!query.trim()) return [];
+
+    const res = await fetch(
+        `${BASE_URL}/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`,
+        {
+            headers: { Authorization: `Bearer ${process.env.TMDB_API_KEY}`},
+            next: { revalidate: 60 },
+        }
+    );
+
+    if (!res.ok) throw new Error(`Search failed: ${res.status}`);
+
+    const data = await res.json();
+    return data.results;
 }
