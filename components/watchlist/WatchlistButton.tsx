@@ -23,9 +23,13 @@ export function WatchlistButton({ movie }: WatchlistButtonProps) {
   return (
     <button
       type="button"
-      onClick={() => (saved ? removeFromWatchlist(movie.id) : addToWatchlist(movie))}
-      aria-pressed={saved}
-      className="watchlist-button"
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        saved ? removeFromWatchlist(movie.id) : addToWatchlist(movie);
+        }}
+        aria-pressed={saved}
+        className="watchlist-button"
     >
       {saved ? '− Remove from Watchlist' : '+ Add to Watchlist'}
     </button>
