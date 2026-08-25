@@ -2,6 +2,7 @@ import type { Movie } from "../../types/movie";
 import Link from "next/link";
 import { getPosterUrl } from "@/lib/utils";
 import MoviePoster from "./MoviePoster";
+import { WatchlistButton } from "../watchlist/WatchlistButton";
 
 type MovieCardProps = {
   movie: Movie;
@@ -23,6 +24,14 @@ export default function MovieCard({ movie }: MovieCardProps) {
         <p className="text-sm text-gray-400">
           ⭐ {movie.vote_average.toFixed(1)}
         </p>
+        <WatchlistButton
+          movie={{
+            id: movie.id,
+            title: movie.title,
+            posterPath: movie.poster_path,
+            releaseDate: movie.release_date,
+          }}
+        />
       </div>
     </Link>
   );

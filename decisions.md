@@ -44,3 +44,16 @@
     its giving 401 issue related to API key
     dropping the header pattern and using the same API call methods the other 2 functions
 
+9. Watch list 
+    first i decided to do auth and db for this but it was too much for the begining so now i'm going with local storage
+
+    in the nav i've used the wishlist but i wrote the code 
+    in watchlist so i fixed it 
+    
+    i forgot to pass prop in the Watchlist Button 
+    now there is a problem when a user click the add or remove button 
+    it open's the movie details because the add button is inside the 
+    moviecard which is clickable
+
+    need to fix it 
+    
