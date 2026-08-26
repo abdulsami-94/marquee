@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useWatchlist } from "@/lib/hooks/useWatchlist";
 import { WatchlistButton } from "../../../../components/watchlist/WatchlistButton";
 import MoviePoster from "../../../../components/movie/MoviePoster";
+import { getPosterUrl } from "@/lib/utils";
 
 export default function WatchlistPage() {
     const { watchlist, isLoaded } = useWatchlist();
@@ -28,7 +29,7 @@ export default function WatchlistPage() {
                 {watchlist.map((movie) => (
                     <div key={movie.id} className="watchlist-item">
                         <Link href="{`/movies/${movie.id}`}">
-                            <MoviePoster posterPath={movie.posterPath} alt={movie.title} />
+                            <MoviePoster src={getPosterUrl(movie.posterPath)} alt={movie.title} />
                             <h2>{movie.title}</h2>
                             <p>{movie.releaseDate}</p>
                         </Link>
