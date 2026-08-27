@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useWatchlist } from "@/lib/hooks/useWatchlist";
+import { useWatchlist } from "@/context/WatchlistContext";
 import { WatchlistButton } from "../../../../components/watchlist/WatchlistButton";
 import MoviePoster from "../../../../components/movie/MoviePoster";
 import { getPosterUrl } from "@/lib/utils";

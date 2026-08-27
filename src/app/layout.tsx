@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../../components/navigation/Navbar";
+import { WatchlistProvider } from "@/context/WatchlistContext";
 
 export const metadata: Metadata = {
   title: "MovieApp",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
+        <WatchlistProvider>
+          <Navbar />
+          {children}
+        </WatchlistProvider>
       </body>
     </html>
   );

@@ -55,5 +55,6 @@
     it open's the movie details because the add button is inside the 
     moviecard which is clickable
 
-    need to fix it 
+10. The watchlist doesn't have grid layout like the homepage 
+    if any movie is removed from watchlist it don't go unless page refershed
     

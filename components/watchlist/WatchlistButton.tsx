@@ -1,7 +1,7 @@
 'use client';
 
-import { useWatchlist } from '@/lib/hooks/useWatchlist';
 import type { WatchlistMovie } from '../../types/watchlist';
+import { useWatchlist } from "@/context/WatchlistContext";
 
 type WatchlistButtonProps = {
   movie: WatchlistMovie;
