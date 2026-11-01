@@ -6,14 +6,16 @@ import { WatchlistButton } from "../watchlist/WatchlistButton";
 
 type MovieCardProps = {
   movie: Movie;
+  priority?: boolean;
 };
 
-export default function MovieCard({ movie }: MovieCardProps) {
+export default function MovieCard({ movie, priority = false }: MovieCardProps) {
   return (
     <Link href={`/movies/${movie.id}`} className="group block">
       <MoviePoster
         src={getPosterUrl(movie.poster_path)}
         alt={movie.title}
+        priority={priority}
       />
 
       <div className="mt-2">

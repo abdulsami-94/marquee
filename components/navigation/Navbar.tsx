@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SearchBar from "../movie/SearchBar";
+import { Suspense } from "react";
 
 export default function Navbar() {
     return (
@@ -9,7 +10,9 @@ export default function Navbar() {
             <Link href="/" className="text-xl font-bold">Marquee</Link>
 
             <div>
-                <SearchBar />
+                <Suspense fallback={<input placeholder="Search movies..." className="px-3 py-2 rounded border" disabled />}>
+                    <SearchBar />
+                </Suspense>
             </div>
 
             <div className="flex items-center gap-4">

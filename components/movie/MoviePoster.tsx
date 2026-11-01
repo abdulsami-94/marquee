@@ -6,11 +6,13 @@ import Image from "next/image";
 type MoviePosterProps = {
   src: string;
   alt: string;
+  priority?: boolean;
 };
 
 export default function MoviePoster({
   src,
   alt,
+  priority = false,
 }: MoviePosterProps) {
   const [loaded, setLoaded] = useState(false);
 
@@ -24,6 +26,7 @@ export default function MoviePoster({
         src={src}
         alt={alt}
         fill
+        priority={priority}
         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
         className={`object-cover transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
